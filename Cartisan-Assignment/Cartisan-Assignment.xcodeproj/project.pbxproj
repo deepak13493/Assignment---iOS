@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		AE10FFB11DE0DF6500A0CB50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFB01DE0DF6500A0CB50 /* AppDelegate.swift */; };
-		AE10FFB31DE0DF6500A0CB50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFB21DE0DF6500A0CB50 /* ViewController.swift */; };
 		AE10FFB61DE0DF6500A0CB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE10FFB41DE0DF6500A0CB50 /* Main.storyboard */; };
 		AE10FFB81DE0DF6500A0CB50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE10FFB71DE0DF6500A0CB50 /* Assets.xcassets */; };
 		AE10FFBB1DE0DF6500A0CB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE10FFB91DE0DF6500A0CB50 /* LaunchScreen.storyboard */; };
+		AE10FFC31DE0F15500A0CB50 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFC21DE0F15500A0CB50 /* APIManager.swift */; };
+		AE10FFCB1DE0F2B400A0CB50 /* SearchResultDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFC71DE0F2B400A0CB50 /* SearchResultDataManager.swift */; };
+		AE10FFCC1DE0F2B400A0CB50 /* SearchResultMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFC81DE0F2B400A0CB50 /* SearchResultMapViewController.swift */; };
+		AE10FFCD1DE0F2B400A0CB50 /* SearchResultAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFC91DE0F2B400A0CB50 /* SearchResultAPIHandler.swift */; };
+		AE10FFCE1DE0F2B400A0CB50 /* SearchResultDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFCA1DE0F2B400A0CB50 /* SearchResultDataParser.swift */; };
+		AE10FFD01DE0F66500A0CB50 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFCF1DE0F66500A0CB50 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE10FFAD1DE0DF6500A0CB50 /* Cartisan-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cartisan-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE10FFB01DE0DF6500A0CB50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE10FFB21DE0DF6500A0CB50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE10FFB51DE0DF6500A0CB50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE10FFB71DE0DF6500A0CB50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE10FFBA1DE0DF6500A0CB50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE10FFBC1DE0DF6500A0CB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE10FFC21DE0F15500A0CB50 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		AE10FFC71DE0F2B400A0CB50 /* SearchResultDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDataManager.swift; sourceTree = "<group>"; };
+		AE10FFC81DE0F2B400A0CB50 /* SearchResultMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultMapViewController.swift; sourceTree = "<group>"; };
+		AE10FFC91DE0F2B400A0CB50 /* SearchResultAPIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultAPIHandler.swift; sourceTree = "<group>"; };
+		AE10FFCA1DE0F2B400A0CB50 /* SearchResultDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDataParser.swift; sourceTree = "<group>"; };
+		AE10FFCF1DE0F66500A0CB50 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,43 @@
 		AE10FFAF1DE0DF6500A0CB50 /* Cartisan-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				AE10FFC41DE0F29100A0CB50 /* Search screen */,
 				AE10FFB01DE0DF6500A0CB50 /* AppDelegate.swift */,
-				AE10FFB21DE0DF6500A0CB50 /* ViewController.swift */,
+				AE10FFC21DE0F15500A0CB50 /* APIManager.swift */,
 				AE10FFB41DE0DF6500A0CB50 /* Main.storyboard */,
 				AE10FFB71DE0DF6500A0CB50 /* Assets.xcassets */,
 				AE10FFB91DE0DF6500A0CB50 /* LaunchScreen.storyboard */,
 				AE10FFBC1DE0DF6500A0CB50 /* Info.plist */,
 			);
 			path = "Cartisan-Assignment";
+			sourceTree = "<group>";
+		};
+		AE10FFC41DE0F29100A0CB50 /* Search screen */ = {
+			isa = PBXGroup;
+			children = (
+				AE10FFC71DE0F2B400A0CB50 /* SearchResultDataManager.swift */,
+				AE10FFC81DE0F2B400A0CB50 /* SearchResultMapViewController.swift */,
+				AE10FFC91DE0F2B400A0CB50 /* SearchResultAPIHandler.swift */,
+				AE10FFCA1DE0F2B400A0CB50 /* SearchResultDataParser.swift */,
+				AE10FFCF1DE0F66500A0CB50 /* SearchResult.swift */,
+				AE10FFC51DE0F29100A0CB50 /* List View */,
+				AE10FFC61DE0F29100A0CB50 /* Map View */,
+			);
+			path = "Search screen";
+			sourceTree = "<group>";
+		};
+		AE10FFC51DE0F29100A0CB50 /* List View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "List View";
+			sourceTree = "<group>";
+		};
+		AE10FFC61DE0F29100A0CB50 /* Map View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Map View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE10FFB31DE0DF6500A0CB50 /* ViewController.swift in Sources */,
+				AE10FFCE1DE0F2B400A0CB50 /* SearchResultDataParser.swift in Sources */,
+				AE10FFD01DE0F66500A0CB50 /* SearchResult.swift in Sources */,
+				AE10FFCC1DE0F2B400A0CB50 /* SearchResultMapViewController.swift in Sources */,
+				AE10FFC31DE0F15500A0CB50 /* APIManager.swift in Sources */,
+				AE10FFCD1DE0F2B400A0CB50 /* SearchResultAPIHandler.swift in Sources */,
 				AE10FFB11DE0DF6500A0CB50 /* AppDelegate.swift in Sources */,
+				AE10FFCB1DE0F2B400A0CB50 /* SearchResultDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +343,7 @@
 				AE10FFC11DE0DF6500A0CB50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
