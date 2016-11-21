@@ -36,13 +36,22 @@
                     <view key="view" contentMode="scaleToFill" id="jhW-bz-HWj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yJR-Mu-ETh">
+                                <frame key="frameInset" maxY="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map View" id="A78-Fq-jDZ"/>
+                    <connections>
+                        <outlet property="mapView" destination="yJR-Mu-ETh" id="gXh-in-dSK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad5-f2-a1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-294" y="-392"/>
+            <point key="canvasLocation" x="-561" y="-392"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="egU-V6-58p">

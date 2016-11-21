@@ -8,12 +8,10 @@
 
 import Foundation
 
-//used to store issue api data as container which will use for store in database
+//used to store api search result data
 struct SearchResult {
-    let title: String?
-    let createdDate: String?
-    let updatedDate: String?
-    let state: String?
-    let details: String?
-    let comments_url: String?
+    let id: String?
+    let name: String?
+    let lat: String?
+    let lng: String?
 }

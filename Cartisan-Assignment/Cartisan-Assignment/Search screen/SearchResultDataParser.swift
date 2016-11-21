@@ -19,6 +19,7 @@ struct SearchResultDataParser {
                 return nil
             }
              let venues = parsedObjects["response"]?["venues"] as! [AnyObject]
+             return venues.map( {fillModelClass($0 as? [String: AnyObject] ?? [String: AnyObject]() ) })
 
         } catch let error as NSError {
             print(error.description)
@@ -28,7 +29,11 @@ struct SearchResultDataParser {
     }
     
     private func fillModelClass(_ forObject: [String: AnyObject]) -> SearchResult {
-        return SearchResult(title: forObject["title"] as? String, createdDate: forObject["created_at"] as? String, updatedDate: forObject["updated_at"] as? String, state: forObject["state"] as? String, details: forObject["body"] as? String, comments_url: forObject["comments_url"] as? String)
+        
+        return SearchResult(id: forObject["id"] as? String,
+                            name: forObject["name"] as? String,
+                            lat: forObject["location"]?["lat"] as? String,
+                            lng: forObject["location"]?["lng"] as? String)
         
     }
     

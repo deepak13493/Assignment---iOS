@@ -13,10 +13,10 @@
 		AE10FFBB1DE0DF6500A0CB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE10FFB91DE0DF6500A0CB50 /* LaunchScreen.storyboard */; };
 		AE10FFC31DE0F15500A0CB50 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFC21DE0F15500A0CB50 /* APIManager.swift */; };
 		AE10FFCB1DE0F2B400A0CB50 /* SearchResultDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFC71DE0F2B400A0CB50 /* SearchResultDataManager.swift */; };
-		AE10FFCC1DE0F2B400A0CB50 /* SearchResultMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFC81DE0F2B400A0CB50 /* SearchResultMapViewController.swift */; };
 		AE10FFCD1DE0F2B400A0CB50 /* SearchResultAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFC91DE0F2B400A0CB50 /* SearchResultAPIHandler.swift */; };
 		AE10FFCE1DE0F2B400A0CB50 /* SearchResultDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFCA1DE0F2B400A0CB50 /* SearchResultDataParser.swift */; };
 		AE10FFD01DE0F66500A0CB50 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFCF1DE0F66500A0CB50 /* SearchResult.swift */; };
+		AECD62251DE377600027CFF1 /* SearchResultMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD62241DE377600027CFF1 /* SearchResultMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +28,10 @@
 		AE10FFBC1DE0DF6500A0CB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE10FFC21DE0F15500A0CB50 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		AE10FFC71DE0F2B400A0CB50 /* SearchResultDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDataManager.swift; sourceTree = "<group>"; };
-		AE10FFC81DE0F2B400A0CB50 /* SearchResultMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultMapViewController.swift; sourceTree = "<group>"; };
 		AE10FFC91DE0F2B400A0CB50 /* SearchResultAPIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultAPIHandler.swift; sourceTree = "<group>"; };
 		AE10FFCA1DE0F2B400A0CB50 /* SearchResultDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDataParser.swift; sourceTree = "<group>"; };
 		AE10FFCF1DE0F66500A0CB50 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		AECD62241DE377600027CFF1 /* SearchResultMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				AE10FFC71DE0F2B400A0CB50 /* SearchResultDataManager.swift */,
-				AE10FFC81DE0F2B400A0CB50 /* SearchResultMapViewController.swift */,
 				AE10FFC91DE0F2B400A0CB50 /* SearchResultAPIHandler.swift */,
 				AE10FFCA1DE0F2B400A0CB50 /* SearchResultDataParser.swift */,
 				AE10FFCF1DE0F66500A0CB50 /* SearchResult.swift */,
@@ -99,6 +98,7 @@
 		AE10FFC61DE0F29100A0CB50 /* Map View */ = {
 			isa = PBXGroup;
 			children = (
+				AECD62241DE377600027CFF1 /* SearchResultMapViewController.swift */,
 			);
 			path = "Map View";
 			sourceTree = "<group>";
@@ -177,8 +177,8 @@
 			files = (
 				AE10FFCE1DE0F2B400A0CB50 /* SearchResultDataParser.swift in Sources */,
 				AE10FFD01DE0F66500A0CB50 /* SearchResult.swift in Sources */,
-				AE10FFCC1DE0F2B400A0CB50 /* SearchResultMapViewController.swift in Sources */,
 				AE10FFC31DE0F15500A0CB50 /* APIManager.swift in Sources */,
+				AECD62251DE377600027CFF1 /* SearchResultMapViewController.swift in Sources */,
 				AE10FFCD1DE0F2B400A0CB50 /* SearchResultAPIHandler.swift in Sources */,
 				AE10FFB11DE0DF6500A0CB50 /* AppDelegate.swift in Sources */,
 				AE10FFCB1DE0F2B400A0CB50 /* SearchResultDataManager.swift in Sources */,
@@ -230,6 +230,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_ACTIVITY_MODE = "";
+				"DEBUG_ACTIVITY_MODE[sdk=iphonesimulator*]" = disable;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -280,6 +282,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_ACTIVITY_MODE = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
