@@ -8,6 +8,7 @@
 
 import Foundation
 
+//replace it with plist
 private let baseURL = "https://api.foursquare.com/v2/venues/search?"
 private let client_id = "VV1XZLSNNXFNKJNK2W3TVPPANWG23LBD44Q5XS02ABUHWW0N"
 private let client_secret = "KUIECTYOOFW320MTT24JVJ0XFXK13OT5KRG4OYQCA02XI1KW"

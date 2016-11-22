@@ -12,6 +12,6 @@ import Foundation
 struct SearchResult {
     let id: String?
     let name: String?
-    let lat: String?
-    let lng: String?
+    let lat: Double?
+    let lng: Double?
 }

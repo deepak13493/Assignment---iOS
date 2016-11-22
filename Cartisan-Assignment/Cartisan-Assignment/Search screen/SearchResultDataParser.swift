@@ -30,10 +30,11 @@ struct SearchResultDataParser {
     
     private func fillModelClass(_ forObject: [String: AnyObject]) -> SearchResult {
         
+        let location = forObject["location"] as? [String: AnyObject]
         return SearchResult(id: forObject["id"] as? String,
                             name: forObject["name"] as? String,
-                            lat: forObject["location"]?["lat"] as? String,
-                            lng: forObject["location"]?["lng"] as? String)
+                            lat: location?["lat"] as? Double,
+                            lng: location?["lng"] as? Double)
         
     }
     
