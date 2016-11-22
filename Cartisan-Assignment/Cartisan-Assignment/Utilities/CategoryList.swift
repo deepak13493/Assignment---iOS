@@ -8,15 +8,37 @@
 
 import Foundation
 
-enum Category: String {
-    case Bakery,Building
+enum Category: Int {
     
-    var id : String {
+    case Bakery,Building,Pizza,Bank,Workshop,Etc
+    
+    var title: String {
+        switch self {
+        case .Bakery: return "Bakery"
+        case .Building: return "Building"
+        case .Pizza: return "Pizza"
+        case .Bank: return "Bank"
+        case .Workshop: return "Workshop"
+        case .Etc: return "Etc"
+        }
+    }
+    
+    var id : String? {
         switch self {
         case .Bakery:
             return "4bf58dd8d48988d16a941735"
         case .Building:
             return "4d954b06a243a5684965b473"
+        case .Pizza:
+            return "4bf58dd8d48988d1ca941735"
+        case .Bank:
+            return ""
+        case .Workshop:
+            return ""
+        case .Etc:
+            return nil
         }
     }
+    
+    static let count = 6
 }
