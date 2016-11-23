@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B157D6D1DE5909D00D7535B /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B157D6C1DE5909D00D7535B /* CategoryPickerViewController.swift */; };
+		5BD59B1E1DE5DB9100EDA22C /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD59B1D1DE5DB9100EDA22C /* SearchResultViewController.swift */; };
 		5BDAA3F11DE48D8300DC85C8 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDAA3F01DE48D8300DC85C8 /* CategoryList.swift */; };
 		AE10FFB11DE0DF6500A0CB50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFB01DE0DF6500A0CB50 /* AppDelegate.swift */; };
 		AE10FFB61DE0DF6500A0CB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE10FFB41DE0DF6500A0CB50 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B157D6C1DE5909D00D7535B /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
+		5BD59B1D1DE5DB9100EDA22C /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		5BDAA3F01DE48D8300DC85C8 /* CategoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		AE10FFAD1DE0DF6500A0CB50 /* Cartisan-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cartisan-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE10FFB01DE0DF6500A0CB50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				5BDAA3F01DE48D8300DC85C8 /* CategoryList.swift */,
+				5B157D6C1DE5909D00D7535B /* CategoryPickerViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 				AE10FFCF1DE0F66500A0CB50 /* SearchResult.swift */,
 				AE10FFC51DE0F29100A0CB50 /* List View */,
 				AE10FFC61DE0F29100A0CB50 /* Map View */,
+				5BD59B1D1DE5DB9100EDA22C /* SearchResultViewController.swift */,
 			);
 			path = "Search screen";
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B157D6D1DE5909D00D7535B /* CategoryPickerViewController.swift in Sources */,
 				AE10FFCE1DE0F2B400A0CB50 /* SearchResultDataParser.swift in Sources */,
 				AE10FFD01DE0F66500A0CB50 /* SearchResult.swift in Sources */,
 				AE92996A1DE4CED700C5BE99 /* VenueDetailsViewController.swift in Sources */,
@@ -210,6 +217,7 @@
 				AE10FFCD1DE0F2B400A0CB50 /* SearchResultAPIHandler.swift in Sources */,
 				AE10FFB11DE0DF6500A0CB50 /* AppDelegate.swift in Sources */,
 				AE10FFCB1DE0F2B400A0CB50 /* SearchResultDataManager.swift in Sources */,
+				5BD59B1E1DE5DB9100EDA22C /* SearchResultViewController.swift in Sources */,
 				5BDAA3F11DE48D8300DC85C8 /* CategoryList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
