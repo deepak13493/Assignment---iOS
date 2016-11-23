@@ -14,12 +14,13 @@ enum Category: Int {
     
     var title: String {
         switch self {
-        case .Bakery: return "Bakery"
-        case .Building: return "Building"
         case .Pizza: return "Pizza"
         case .Bank: return "Bank"
+        case .Bakery: return "Bakery"
+        case .Building: return "Building"
         case .Workshop: return "Workshop"
         case .Etc: return "Etc"
+        
         }
     }
     
@@ -32,9 +33,9 @@ enum Category: Int {
         case .Pizza:
             return "4bf58dd8d48988d1ca941735"
         case .Bank:
-            return ""
+            return "4bf58dd8d48988d10a951735"
         case .Workshop:
-            return ""
+            return "56aa371be4b08b9a8d5734d3"
         case .Etc:
             return nil
         }

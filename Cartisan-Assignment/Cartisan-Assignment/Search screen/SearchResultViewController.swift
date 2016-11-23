@@ -9,6 +9,11 @@
 import UIKit
 import MapKit
 
+enum SearchedResultView: Int {
+    case Map,List
+}
+
+
 class SearchResultViewController: UIViewController,
                                   CLLocationManagerDelegate,
                                   CategoryPickerViewControllerDelegate {
@@ -21,8 +26,10 @@ class SearchResultViewController: UIViewController,
     var categoryID: String?
     var categoryPickerViewController: CategoryPickerViewController?
     var searchResults: [SearchResult]?
-    var serachResultDataManager = SearchResultDataManager()
     var selectedView = SearchedResultView.Map
+    var searchResultMapViewController: SearchResultMapViewController!
+    var searchResultTableViewController: SearchResultTableViewController!
+
     
     lazy var datFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -31,42 +38,30 @@ class SearchResultViewController: UIViewController,
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
-        }
+        prepareView()
         
-        categoryPickerViewController = storyboard?.instantiateViewController(withIdentifier: String( describing: CategoryPickerViewController.self)) as? CategoryPickerViewController
-        categoryPickerViewController?.showPicker(onViewController: self)
-        categoryPickerViewController?.delegate = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        //MARK:- IBActions
     @IBAction func showListView(_ sender: Any) {
-        
+        selectedView = SearchedResultView(rawValue: (sender as! UIButton).tag)!
+        if let searchResults = searchResults {
+            show(searchedResultData: searchResults)
+
+        }
     }
     @IBAction func showMapView(_ sender: Any) {
-        
-        
+        selectedView = SearchedResultView(rawValue: (sender as! UIButton).tag)!
+        if let searchResults = searchResults {
+            show(searchedResultData: searchResults)
+            
+        }
+    }
+    
+    @IBAction func show(_ sender: AnyObject) {
+        categoryPickerViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: CategoryPickerViewController.self)) as? CategoryPickerViewController
+        categoryPickerViewController?.showPicker(onViewController: self)
+        categoryPickerViewController?.delegate = self
     }
     
     
@@ -87,16 +82,12 @@ class SearchResultViewController: UIViewController,
         if let catrgoryID = catrgoryID {
             parameters += [("categoryId", catrgoryID)]
         }
-        //  let parameters = [("ll", "18.5528172,73.9091116"), ("v", datFormatter.string(from: Date())),("categoryId", catrgoryID)]
-        
+        var serachResultDataManager = SearchResultDataManager()
         serachResultDataManager.fetch(forData: parameters) { [weak self](searchResults) in
             DispatchQueue.main.async {
                 if let searchResults = searchResults {
                     self?.searchResults = searchResults
-//                    self?.showDetailsOnPlacemark(forSearchedResults: self?.searchResults ?? [SearchResult]())
-                    self?.categoryPickerViewController?.removePicker()
-                    //self?.optionPickerView.removeFromSuperview()
-                    
+                    self?.show(searchedResultData: searchResults)
                 } else {
                     let alert = UIAlertController(title: "Alert", message: "Please check your Network, If it is ok", preferredStyle: UIAlertControllerStyle.alert)
                     
@@ -121,8 +112,66 @@ class SearchResultViewController: UIViewController,
     
    // MARK:- private helper methods
     
-    func showMapView(forResults searchedResults: [SearchResult]) {
+    private func show(searchedResultData searchedData: [SearchResult]) {
+        switch selectedView {
+        case .Map:
+            displayMapView(forResults: searchedData)
+        case .List:
+            displayListView(forResults: searchedData)
+       
+        }
+        categoryPickerViewController?.removePicker()
+    }
+    
+   private func displayMapView(forResults searchedResults: [SearchResult]) {
+         DispatchQueue.main.async {[weak self] in
+            self?.searchResultTableViewController.removeList()
+            self?.searchResultMapViewController?.showMap()
+            self?.searchResultMapViewController?.showDetailsOnPlacemark(forSearchedResults: searchedResults)
+        }
+    }
+    
+    private func displayListView(forResults searchedResults: [SearchResult]) {
+        DispatchQueue.main.async {[weak self] in
+            self?.searchResultMapViewController.removeMap()
+            self?.searchResultTableViewController.searchResults = self!.searchResults
+            self?.searchResultTableViewController?.showList()
+            self?.searchResultTableViewController?.refresh()
+        }
+    }
+    
+    private func prepareView() {
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+        
+        // create list view
+        searchResultTableViewController = storyboard?.instantiateViewController(withIdentifier: String( describing: SearchResultTableViewController.self)) as? SearchResultTableViewController
+        searchResultTableViewController.parentNavigationController = navigationController
+        searchResultTableViewController?.showList(onView: containerView)
+        
+        // create map view
+        searchResultMapViewController = storyboard?.instantiateViewController(withIdentifier: String( describing: SearchResultMapViewController.self)) as? SearchResultMapViewController
+        searchResultMapViewController.parentNavigationController = navigationController
+        searchResultMapViewController?.showMap(onView: containerView)
+        
+        //create pickerView
+        categoryPickerViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: CategoryPickerViewController.self)) as? CategoryPickerViewController
+        categoryPickerViewController?.showPicker(onViewController: self)
+        categoryPickerViewController?.delegate = self
         
     }
+    
+    private func createPicker() {
+        categoryPickerViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: CategoryPickerViewController.self)) as? CategoryPickerViewController
+        categoryPickerViewController?.showPicker(onViewController: self)
+        categoryPickerViewController?.delegate = self
+    }
+
     
 }

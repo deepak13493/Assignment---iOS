@@ -10,9 +10,12 @@ import UIKit
 import MapKit
 
 private let resueID = "AnnotationViewID"
+
 class SearchResultMapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    //TODO:- need to check better solution
+    var parentNavigationController: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +26,6 @@ class SearchResultMapViewController: UIViewController {
     }
     
     func showDetailsOnPlacemark(forSearchedResults searchedResults: [SearchResult]) {
-        mapView.delegate = self
-        mapView.showsUserLocation = true
         let annotations = searchedResults.map { searchedResult -> SearchResultMapAnnotation in
             return  SearchResultMapAnnotation(coordinate: CLLocationCoordinate2D(latitude: searchedResult.lat ?? 0.0 , longitude: searchedResult.lng ?? 0.0),
                 title: searchedResult.name,
@@ -54,6 +55,14 @@ class SearchResultMapViewController: UIViewController {
         view.addSubview(self.view)
     }
     
+    func removeMap() {
+        view.alpha = 0
+    }
+    func showMap()  {
+        view.alpha = 1
+
+    }
+    
 }
 
 //show details button on placemark
@@ -78,7 +87,7 @@ extension SearchResultMapViewController: MKMapViewDelegate {
              let selectedAnnotation = view.annotation as? SearchResultMapAnnotation
              let venueDetailsViewController = storyboard?.instantiateViewController(withIdentifier: String( describing: VenueDetailsViewController.self)) as! VenueDetailsViewController
             venueDetailsViewController.venueID = selectedAnnotation?.searchedResultID
-            navigationController?.pushViewController(venueDetailsViewController, animated: true)
+            parentNavigationController?.pushViewController(venueDetailsViewController, animated: true)
             
         }
     }
