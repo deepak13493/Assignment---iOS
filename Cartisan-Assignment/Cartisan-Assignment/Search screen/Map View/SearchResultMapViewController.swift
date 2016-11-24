@@ -26,6 +26,11 @@ class SearchResultMapViewController: UIViewController {
     }
     
     func showDetailsOnPlacemark(forSearchedResults searchedResults: [SearchResult]) {
+        
+        //remove previously annotaion
+        if mapView.annotations.count > 0 {
+            mapView.removeAnnotations(mapView.annotations)
+        }
         let annotations = searchedResults.map { searchedResult -> SearchResultMapAnnotation in
             return  SearchResultMapAnnotation(coordinate: CLLocationCoordinate2D(latitude: searchedResult.lat ?? 0.0 , longitude: searchedResult.lng ?? 0.0),
                 title: searchedResult.name,

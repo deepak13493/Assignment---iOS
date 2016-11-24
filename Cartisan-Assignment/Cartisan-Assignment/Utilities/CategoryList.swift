@@ -8,6 +8,10 @@
 
 import Foundation
 
+
+let client_id = "VV1XZLSNNXFNKJNK2W3TVPPANWG23LBD44Q5XS02ABUHWW0N"
+let client_secret = "KUIECTYOOFW320MTT24JVJ0XFXK13OT5KRG4OYQCA02XI1KW"
+
 enum Category: Int {
     
     case Bakery,Building,Pizza,Bank,Workshop,Etc

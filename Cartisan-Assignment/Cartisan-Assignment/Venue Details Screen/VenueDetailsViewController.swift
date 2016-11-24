@@ -10,8 +10,23 @@ import UIKit
 
 class VenueDetailsViewController: UIViewController {
     var venueID: String!
+    var venueDeatils: [VenueDetails]?
+    
+    lazy var datFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        return dateFormatter
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var venueDetailsDataManager = VenueDetailsDataManager()
+        venueDetailsDataManager.fetch(forData: [("Venue_ID",venueID),("v",datFormatter.string(from: Date()))],
+                                      data: { [weak self] (venueDetails) in
+        self?.venueDeatils = venueDetails
+
+    })
+        
         print("venueID\(venueID)")
         // Do any additional setup after loading the view.
     }
