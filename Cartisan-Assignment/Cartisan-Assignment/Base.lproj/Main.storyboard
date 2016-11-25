@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kqI-OB-LAg">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ae8-mw-7RB" id="rhj-lE-gMR">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -65,6 +66,9 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 <state key="normal" title="Map View"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="showMapView:" destination="CbM-7C-vag" eventType="touchUpInside" id="wJA-dL-Zx6"/>
                                 </connections>
@@ -72,6 +76,9 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZn-is-E55">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="List View"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="showListView:" destination="CbM-7C-vag" eventType="touchUpInside" id="bRB-KD-VDm"/>
                                 </connections>
@@ -151,11 +158,57 @@
                         <viewControllerLayoutGuide type="top" id="leE-pR-Veq"/>
                         <viewControllerLayoutGuide type="bottom" id="HlL-Oq-PSz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OOc-Sq-38X">
+                    <view key="view" contentMode="scaleToFill" id="OOc-Sq-38X" customClass="VenueDeatilsView" customModule="Cartisan_Assignment" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Txk-ip-EbR">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nf-5j-u4X">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KrT-Em-ugh">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjm-33-7YK">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EO5-FS-YsC">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Stats" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kd-T0-MaU">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Txk-ip-EbR" firstAttribute="leading" secondItem="OOc-Sq-38X" secondAttribute="leading" constant="20" id="bYG-iw-Oqj"/>
+                            <constraint firstItem="Txk-ip-EbR" firstAttribute="top" secondItem="leE-pR-Veq" secondAttribute="bottom" constant="20" id="jNI-ix-deR"/>
+                            <constraint firstAttribute="trailing" secondItem="Txk-ip-EbR" secondAttribute="trailing" constant="20" id="v97-gs-vtC"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="address" destination="sjm-33-7YK" id="FSP-Ut-Odi"/>
+                            <outlet property="categoryName" destination="EO5-FS-YsC" id="sbG-jt-OL8"/>
+                            <outlet property="cateoryStats" destination="3Kd-T0-MaU" id="Ikc-9Y-G1V"/>
+                            <outlet property="contact" destination="KrT-Em-ugh" id="1Fv-Cd-xKc"/>
+                            <outlet property="name" destination="8Nf-5j-u4X" id="Dpf-bg-xAv"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="venueDetailsView" destination="OOc-Sq-38X" id="S03-iH-bYb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GH9-Dl-xXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,6 +227,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsX-7h-KMf">
+                                <color key="backgroundColor" red="0.57254901960000004" green="0.71764705880000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="h8r-l2-uqF" id="GBl-28-bIR"/>
                                     <outlet property="delegate" destination="h8r-l2-uqF" id="cNv-Mt-Kum"/>
@@ -198,16 +252,23 @@
                                     <constraint firstItem="f3h-Gy-wI6" firstAttribute="centerY" secondItem="8Ca-2C-bEI" secondAttribute="centerY" id="z29-PE-cqg"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1X-US-RNx">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zsX-7h-KMf" firstAttribute="top" secondItem="8Ca-2C-bEI" secondAttribute="bottom" id="0ZP-09-vSt"/>
                             <constraint firstItem="8Ca-2C-bEI" firstAttribute="leading" secondItem="0Ve-hh-jnJ" secondAttribute="leading" id="CiJ-nT-ZvZ"/>
+                            <constraint firstItem="8Ca-2C-bEI" firstAttribute="top" secondItem="u1X-US-RNx" secondAttribute="bottom" id="I8Y-uT-UDm"/>
                             <constraint firstAttribute="trailing" secondItem="zsX-7h-KMf" secondAttribute="trailing" id="KYi-FA-gyr"/>
+                            <constraint firstItem="u1X-US-RNx" firstAttribute="top" secondItem="A0z-fd-0wK" secondAttribute="bottom" id="W4Z-3e-cfb"/>
+                            <constraint firstItem="u1X-US-RNx" firstAttribute="leading" secondItem="0Ve-hh-jnJ" secondAttribute="leading" id="aqR-fW-Kui"/>
+                            <constraint firstAttribute="trailing" secondItem="u1X-US-RNx" secondAttribute="trailing" id="bMB-LE-WMZ"/>
                             <constraint firstItem="zsX-7h-KMf" firstAttribute="leading" secondItem="0Ve-hh-jnJ" secondAttribute="leading" id="nXC-op-83H"/>
                             <constraint firstItem="tqq-7N-nG3" firstAttribute="top" secondItem="zsX-7h-KMf" secondAttribute="bottom" id="qiV-iX-sbV"/>
                             <constraint firstItem="zsX-7h-KMf" firstAttribute="width" secondItem="0Ve-hh-jnJ" secondAttribute="width" id="s7h-FZ-AnU"/>
-                            <constraint firstItem="zsX-7h-KMf" firstAttribute="height" secondItem="0Ve-hh-jnJ" secondAttribute="height" multiplier="0.4" id="u7I-KO-eT3"/>
+                            <constraint firstItem="zsX-7h-KMf" firstAttribute="height" secondItem="0Ve-hh-jnJ" secondAttribute="height" multiplier="0.3" id="u7I-KO-eT3"/>
                             <constraint firstAttribute="trailing" secondItem="8Ca-2C-bEI" secondAttribute="trailing" id="uPq-cZ-AQD"/>
                         </constraints>
                     </view>

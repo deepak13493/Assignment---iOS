@@ -8,26 +8,31 @@
 
 import UIKit
 
-class VenueDetailsViewController: UIViewController {
+class VenueDetailsViewController: BaseViewController {
     var venueID: String!
-    var venueDeatils: [VenueDetails]?
+    var venueDeatils: VenueDetails?
     
     lazy var datFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         return dateFormatter
     }()
+    
+    @IBOutlet weak var venueDetailsView: VenueDeatilsView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.showActivityView()
         var venueDetailsDataManager = VenueDetailsDataManager()
         venueDetailsDataManager.fetch(forData: [("Venue_ID",venueID),("v",datFormatter.string(from: Date()))],
                                       data: { [weak self] (venueDetails) in
-        self?.venueDeatils = venueDetails
-
-    })
-        
-        print("venueID\(venueID)")
+                                        DispatchQueue.main.async {
+                                            self?.venueDeatils = venueDetails
+                                            self?.venueDetailsView.configureView(withViewdetails: venueDetails!)
+                                            self?.hideActivityView()
+                                        }
+                                        
+            })
         // Do any additional setup after loading the view.
     }
 
@@ -36,15 +41,6 @@ class VenueDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+

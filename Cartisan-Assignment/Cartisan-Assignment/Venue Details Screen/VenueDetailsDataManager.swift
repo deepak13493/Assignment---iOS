@@ -13,10 +13,10 @@ private let baseURL = "https://api.foursquare.com/v2/venues/"
 
 struct VenueDetailsDataManager: VenueDetailsAPIHandlerDelegate {
     
-    private var venueDetailsData: (([VenueDetails]?) -> Void)?
+    private var venueDetailsData: ((VenueDetails?) -> Void)?
     private var parameters  = [("client_id", client_id),("client_secret", client_secret)]
     
-    mutating func fetch(forData dataDictionary: [(String,String)], data: @escaping (([VenueDetails]?) -> Void) )  {
+    mutating func fetch(forData dataDictionary: [(String,String)], data: @escaping ((VenueDetails?) -> Void) )  {
         
         //let allParameters = parameters + dataDictionary
         self.venueDetailsData = data
@@ -31,17 +31,17 @@ struct VenueDetailsDataManager: VenueDetailsAPIHandlerDelegate {
         
         let url = baseURL + dataDictionary.first!.1  + "?" + credientialURL
         
-        var completeURL = url + dataDictionary.last!.0 + "=" + dataDictionary.last!.1
+        let completeURL = url + dataDictionary.last!.0 + "=" + dataDictionary.last!.1
         
-        completeURL = String(completeURL.characters.dropLast())
         venueDetailsAPIHandler.fetchVenueDetailsData(completeURL)
         
     }
     
     //MARK:- SearchResultAPIHandlerDelegate method
-    func venueDetailsData(_ data: [VenueDetails]?) {
+    func venueDetailsData(_ data: VenueDetails?) {
         
         if let data = data {
+            
             venueDetailsData?(data)
         } else {
             venueDetailsData?(nil)

@@ -32,10 +32,16 @@ class CategoryPickerViewController: UIViewController {
     }
     
     func showPicker(onViewController viewController: UIViewController) {
-        viewController.addChildViewController(self)
-        self.view.frame = viewController.view.frame
-        viewController.view.addSubview(self.view)
-        self.didMove(toParentViewController: viewController)
+        UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromBottom, animations: {
+            
+            viewController.addChildViewController(self)
+            self.view.frame = viewController.view.frame
+            viewController.view.addSubview(self.view)
+            self.didMove(toParentViewController: viewController)
+            
+            }, completion: nil)
+        
+        
     }
 
     func removePicker()  {

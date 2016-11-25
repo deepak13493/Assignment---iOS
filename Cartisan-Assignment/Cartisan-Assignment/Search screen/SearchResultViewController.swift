@@ -44,18 +44,10 @@ class SearchResultViewController: UIViewController,
     
         //MARK:- IBActions
     @IBAction func showListView(_ sender: Any) {
-        selectedView = SearchedResultView(rawValue: (sender as! UIButton).tag)!
-        if let searchResults = searchResults {
-            show(searchedResultData: searchResults)
-
-        }
+        showSelectedView(sender)
     }
     @IBAction func showMapView(_ sender: Any) {
-        selectedView = SearchedResultView(rawValue: (sender as! UIButton).tag)!
-        if let searchResults = searchResults {
-            show(searchedResultData: searchResults)
-            
-        }
+        showSelectedView(sender)
     }
     
     @IBAction func show(_ sender: AnyObject) {
@@ -103,9 +95,9 @@ class SearchResultViewController: UIViewController,
     }
     
     func serachResults(forCategory categoryID: String?) {
-        self.categoryID = categoryID
-        if let categoryID = categoryID, let long = longitude, let lat = latitude {
-            loadData(forLatitude: lat, andLongitude: long, withCategory: categoryID)
+        self.categoryID = categoryID ?? Category(rawValue: 0)?.id
+        if let long = longitude, let lat = latitude {
+            loadData(forLatitude: lat, andLongitude: long, withCategory: self.categoryID)
         }
     }
 
@@ -173,5 +165,17 @@ class SearchResultViewController: UIViewController,
         categoryPickerViewController?.delegate = self
     }
 
-    
+    private func showSelectedView(_ sender: Any) {
+        let button = (sender as! UIButton)
+        if button.state == .selected {
+            button.backgroundColor = UIColor.darkGray
+        } else {
+            button.backgroundColor = UIColor.lightGray
+        }
+        selectedView = SearchedResultView(rawValue: button.tag)!
+        if let searchResults = searchResults {
+            show(searchedResultData: searchResults)
+            
+        }
+    }
 }

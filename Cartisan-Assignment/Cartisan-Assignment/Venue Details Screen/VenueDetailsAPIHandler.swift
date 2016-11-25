@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol VenueDetailsAPIHandlerDelegate {
-    func venueDetailsData(_ data: [VenueDetails]?)
+    func venueDetailsData(_ data: VenueDetails?)
 }
 
 struct VenueDetailsAPIHandler: APIManagerDelegate {
@@ -35,9 +35,8 @@ struct VenueDetailsAPIHandler: APIManagerDelegate {
         }
         
         // parse logic
-        
-//        var searchResultDataParser = SearchResultDataParser()
-//        let issueContainerData = searchResultDataParser.parse(data)
-//        delegate?.searchedData(issueContainerData)
+        var venueDetailsDataParser = VenueDetailsDataParser()
+        let venueData = venueDetailsDataParser.parse(data)
+        delegate?.venueDetailsData(venueData)
     }
 }

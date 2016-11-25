@@ -24,6 +24,8 @@
 		AE10FFCD1DE0F2B400A0CB50 /* SearchResultAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFC91DE0F2B400A0CB50 /* SearchResultAPIHandler.swift */; };
 		AE10FFCE1DE0F2B400A0CB50 /* SearchResultDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFCA1DE0F2B400A0CB50 /* SearchResultDataParser.swift */; };
 		AE10FFD01DE0F66500A0CB50 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FFCF1DE0F66500A0CB50 /* SearchResult.swift */; };
+		AE1525CB1DE8DF140097DAAD /* VenueDeatilsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1525CA1DE8DF140097DAAD /* VenueDeatilsView.swift */; };
+		AE1525CD1DE8EECF0097DAAD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1525CC1DE8EECF0097DAAD /* BaseViewController.swift */; };
 		AE9299671DE4CBED00C5BE99 /* SearchResultMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9299661DE4CBED00C5BE99 /* SearchResultMapAnnotation.swift */; };
 		AE92996A1DE4CED700C5BE99 /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9299691DE4CED700C5BE99 /* VenueDetailsViewController.swift */; };
 		AECD62251DE377600027CFF1 /* SearchResultMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD62241DE377600027CFF1 /* SearchResultMapViewController.swift */; };
@@ -49,6 +51,8 @@
 		AE10FFC91DE0F2B400A0CB50 /* SearchResultAPIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultAPIHandler.swift; sourceTree = "<group>"; };
 		AE10FFCA1DE0F2B400A0CB50 /* SearchResultDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDataParser.swift; sourceTree = "<group>"; };
 		AE10FFCF1DE0F66500A0CB50 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		AE1525CA1DE8DF140097DAAD /* VenueDeatilsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDeatilsView.swift; sourceTree = "<group>"; };
+		AE1525CC1DE8EECF0097DAAD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AE9299661DE4CBED00C5BE99 /* SearchResultMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultMapAnnotation.swift; sourceTree = "<group>"; };
 		AE9299691DE4CED700C5BE99 /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
 		AECD62241DE377600027CFF1 /* SearchResultMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultMapViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				AE10FFB71DE0DF6500A0CB50 /* Assets.xcassets */,
 				AE10FFB91DE0DF6500A0CB50 /* LaunchScreen.storyboard */,
 				AE10FFBC1DE0DF6500A0CB50 /* Info.plist */,
+				AE1525CC1DE8EECF0097DAAD /* BaseViewController.swift */,
 				5BDAA3EF1DE48D5600DC85C8 /* Utilities */,
 			);
 			path = "Cartisan-Assignment";
@@ -145,6 +150,7 @@
 				AE9299691DE4CED700C5BE99 /* VenueDetailsViewController.swift */,
 				5B5451A21DE6EB6900711EE8 /* VenueDetailsAPIHandler.swift */,
 				5B5451A41DE6ED1400711EE8 /* VenueDetails.swift */,
+				AE1525CA1DE8DF140097DAAD /* VenueDeatilsView.swift */,
 			);
 			path = "Venue Details Screen";
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 				5B157D6D1DE5909D00D7535B /* CategoryPickerViewController.swift in Sources */,
 				AE0272531DE60F5B0070D6BD /* SearchResultTableViewController.swift in Sources */,
 				AE10FFCE1DE0F2B400A0CB50 /* SearchResultDataParser.swift in Sources */,
+				AE1525CD1DE8EECF0097DAAD /* BaseViewController.swift in Sources */,
 				AE10FFD01DE0F66500A0CB50 /* SearchResult.swift in Sources */,
 				AE92996A1DE4CED700C5BE99 /* VenueDetailsViewController.swift in Sources */,
 				AE9299671DE4CBED00C5BE99 /* SearchResultMapAnnotation.swift in Sources */,
@@ -233,6 +240,7 @@
 				5B5451A31DE6EB6900711EE8 /* VenueDetailsAPIHandler.swift in Sources */,
 				5B5451A51DE6ED1400711EE8 /* VenueDetails.swift in Sources */,
 				AECD62251DE377600027CFF1 /* SearchResultMapViewController.swift in Sources */,
+				AE1525CB1DE8DF140097DAAD /* VenueDeatilsView.swift in Sources */,
 				AE10FFCD1DE0F2B400A0CB50 /* SearchResultAPIHandler.swift in Sources */,
 				5B5451A11DE6EB4300711EE8 /* VenueDetailsDataParser.swift in Sources */,
 				AE10FFB11DE0DF6500A0CB50 /* AppDelegate.swift in Sources */,
@@ -367,7 +375,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mahesh Sammatashetti (LN6AQUJTEA)";
 				DEVELOPMENT_TEAM = GZ7XBB3Z9B;
 				INFOPLIST_FILE = "Cartisan-Assignment/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cybage.Cartisan-Assignment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,7 +392,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mahesh Sammatashetti (LN6AQUJTEA)";
 				DEVELOPMENT_TEAM = GZ7XBB3Z9B;
 				INFOPLIST_FILE = "Cartisan-Assignment/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cybage.Cartisan-Assignment";
 				PRODUCT_NAME = "$(TARGET_NAME)";

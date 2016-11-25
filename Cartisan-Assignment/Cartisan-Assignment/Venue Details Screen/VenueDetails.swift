@@ -14,5 +14,6 @@ struct VenueDetails {
     let address: String?
     let categoryName: String?
     let categoryImageURL: String?
+    let categoryStats: [String: Int]?
     
 }
